@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>魅族官网商城-提供魅族手机 PRO系列、MX系列、魅蓝（Note）系列的预约和购买</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_578769_0s88tw5rur0y66r.css">
+    <link rel="stylesheet" href="./css/swiper-4.1.6.min.css">
+    <style>
+        .fw {
+            width: 1240px;
+            margin: 0 auto;
+        }
+        #banner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            min-width: 1240px;
+            position: relative;
+        }
+        #banner i {
+            position: absolute;
+            top: 10px;
+            right: 8px; 
+            z-index: 9999;
+            font-size: 21px;
+            color: #ccc;
+        }
+        #nav,
+        #nav-left,
+        #nav-center,
+        #nav-right {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+
+        #nav-right {
+            width: 332px;
+        }
+
+        #nav-left {
+            width: 70px;
+        }
+
+        #nav-center {
+            width: 690px;
+        }
+
+        #nav-center a:hover {
+            color: #00c3f5;
+        }
+        .nav-center-li{
+            height: 80px;
+            line-height: 80px;
+        }
+        .nav-center-children {
+            position: absolute;
+            width: 100%;
+            z-index: 2222;
+            height: 187px;
+            background: #fff;
+            box-shadow: 5px 5px 10px #eee;
+            padding-top: 10px;
+            left: 0;
+            display: none;
+        }
+
+        .nav-center-children-items {
+            position: absolute;
+            height: 130px;
+            padding-top: 15px;
+            z-index: 9;
+            margin-left:260px; 
+        }
+
+        .nav-center-children-items ul {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            /* height: 130px; */
+        }
+        .nav-center-children-items ul li {
+            width: 136px;
+            padding: 5px;
+        }
+
+        .nav-center-children-items img {
+            width: 80px;
+        }
+
+        .nav-center-children-items span {
+            display: block;
+            color: #111;
+            height: 16px;
+            margin-top: -43px; 
+        }
+
+        .nav-center-children-items p {
+            color: red;
+            height: 16px;
+            margin: 10px 0;
+        }
+
+        .nav-right-seach {
+            width: 180px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .nav-right-seach i {
+            position: absolute;
+            margin-left: -10px;
+            margin-top: 3px;
+            color: #ccc;
+        }
+
+        .nav-right-seach input {
+            color: #ccc;
+            border: none;
+            margin-left: 20px;
+            margin-top: 5px;
+            width: 135px;
+            height: 20px;
+        }
+
+        .nav-right-login {
+            position: relative;
+        }
+
+        .nav-right-login img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* 下拉隐藏部分 */
+
+        .nav-right-login-item {
+            position: absolute;
+            width: 96px;
+            height: 115px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 999;
+            background: #fff;
+            margin-left: -40px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .nav-right-login-item li {
+            padding-top: 10px;
+
+        }
+
+        .nav-right-login-item li a {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .nav-right-login-item li a:hover {
+            color: #00c3f5
+        }
+
+        .nav-right-shop i {
+            font-size: 24px;
+        }
+
+        .nav-right-shop {
+            position: relative;
+        }
+
+        .nav-right-shop-items {
+            position: absolute;
+            border: 1px solid #ccc;
+            background: #fff;
+            width: 320px;
+            height: 120px;
+            margin-left: -250px;
+            margin-top: 20px;
+            z-index: 999;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .nav-right-shop-items img {
+            width: 40px;
+            height: 40px;
+            margin-left: 50px;
+            margin-top: 40px;
+        }
+
+        .nav-right-shop-items div {
+            margin-left: 110px;
+            margin-top: -40px;
+        }
+
+        footer {
+            height: 295px;
+        }
+
+        .footer {
+            height: 275px;
+        }
+
+        .footer-bottom {
+            height: 80px;
+        }
+
+        .footer-top {
+            height: 195px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .footer-top-left {
+            width: 960px;
+            height: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-top-left li {
+            width: 240px;
+        }
+
+        .footer-top-left li a {
+            color: #ccc;
+        }
+
+        .footer-top-left li i {
+            font-size: 30px;
+        }
+
+        .footer-top-right {
+            height: 120px;
+            width: 144px;
+        }
+
+        .footer-top-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .footer-top-right p:first-child {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .footer-top-right .tel {
+            font-size: 20px;
+            color: #00c3f5;
+            white-space: nowrap;
+        }
+
+        .footer-top-right a {
+            border: 1px solid #00c3f5;
+            border-radius: 3px;
+            background: #00c3f5;
+            color: #fff;
+            width: 144px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .footer-top-right a:hover {
+            background: #2ea0bdf1;
+        }
+
+        .footer-bottom {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .footer-bottom a {
+            color: #ccc;
+        }
+
+        .footer-bottom-top {
+            display: flex;
+            justify-content: flex-start;
+            margin: 26px 0 18px
+        }
+
+        .footer-bottom-top li a {
+            padding: 0 15px;
+        }
+
+        .footer-bottom-top .footer-bottom-top-a {
+            padding-left: 0;
+        }  
+        .home-swiper {
+            min-width: 1240px;
+            height: 480px;
+            position: relative;
+        }
+
+        .swiper-container img {
+            width: 100%;
+            height: 480px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 25px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            margin-top: -22px;
+        }
+
+        .swiper-button-next {
+            right: 100px;
+        }
+
+        .swiper-button-prev {
+            left: 400px;
+        }
+        .home{
+            position: relative;
+            min-width: 1240px;
+        }
+        .home-div{
+            position: absolute;
+        }
+        .home-nav {
+            position: absolute;
+            width: 244px;
+            height: 456px;
+            background: rgba(255, 255, 255, 0.5);
+            margin-top: 280px;
+            margin-left: 63px;
+            z-index: 99;
+            font-size: 14px;
+            padding: 12px 0;
+        }
+
+        .home-nav ul {
+            padding: 20px 0;
+        }
+
+        .home-nav li {
+            height: 57px;
+            line-height: 57px;
+            padding: 0 30px;
+        }
+
+        /* 左侧隐藏的二级菜单 */
+
+        .home-nav-div {
+            position: absolute;
+            width: 320px;
+            height: 456px;
+            background: #fff;
+            margin-left: 214px;
+            top: 0;
+            z-index: 99;
+            font-size: 14px;
+            padding: 12px 0;
+            display: none;
+        }
+
+        .home-nav-div-title {
+            width: 320px;
+            height: 50px;
+            display: block;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        .home-nav-bg {
+            background-color: #fff;
+        }
+
+        .home-nav-div-title span:hover {
+            color: #00c3f5;
+        }
+
+        .home-nav-div-items {
+            width: 150px;
+            height: 50px;
+            display: inline-block;
+        }
+
+        .home-nav-div-items img {
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .home-nav-div-items span {
+            float: left;
+            width: 80px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .home-server {
+            height: 140px;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 5px;
+        }
+
+        .home-server li {
+            width: 244px;
+            height: 140px;
+        }
+
+        .home-server li img {
+            width: 244px;
+            height: 140px;
+        }
+
+        .home-server-li1 {
+            background: #eee;
+        }
+
+        .home-server-a {
+            width: 122px;
+            height: 70px;
+            float: left;
+            text-align: center;
+            display: block;
+            padding-top: 10px;
+        }
+
+        .home-server-a i {
+            display: block;
+            font-size: 24px;
+            font-weight: 100;
+        }
+
+        .home-hot {
+            height: 392px;
+            margin: 40px auto;
+        }
+
+        .home-hot-header {
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .home-hot-header-left {
+            line-height: 32px;
+            font-size: 24px;
+        }
+
+        .home-hot-header-right {
+            width: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+        }
+
+        .home-hot-header-right-btn,
+        .home-hot-header-left-btn {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ddd;
+            text-align: center;
+            margin-right: 5px;
+        }
+
+        .home-hot-header-right-btn:hover,
+        .home-hot-header-left-btn:hover {
+            color: #00c3f5;
+            /* border: 1px solid #00c3f5; */
+        }
+
+        .home-hot-layout {
+            height: 340px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .home-hot-layout-ul {
+            position: absolute;
+            display: flex;
+            box-sizing: border-box;
+            width: 247px;
+            left: 0;
+        }
+
+        .home-hot-layout ul li {
+            width: 247px;
+            border: 1px solid #eee;
+            float: left;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .home-shop-footer ul li:hover {
+            box-shadow: -3px 15px 40px #ccc;
+            z-index: 999;
+        }
+
+        .home-hot-layout li img {
+            margin-top: 36px;
+            padding: 0 35px;
+        }
+
+        .home-hot-layout li h4 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .home-hot-layout li h6 span {
+            margin-top: 5px;
+            background: red;
+            color: #fff;
+        }
+
+        .home-hot-layout li p {
+            margin: 5px 0;
+            color: red;
+        }
+
+        .home-shop {
+            height: 773px;
+            background: #ddd;
+            padding-bottom: 20px;
+            min-width: 1240px;
+        }
+
+        .home-shop-ad {
+            width: 1240px;
+            height: 120px;
+            padding: 10px 0;
+        }
+
+        .home-shop-content {
+            height: 773px;
+        }
+
+        .home-shop-header {
+            padding-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .home-shop-header-left {
+            display: flex;
+        }
+
+        .home-shop-header-left p:first-child {
+            font-size: 30px;
+            color: #999;
+        }
+
+        .home-shop-header-left a {
+            font-size: 14px;
+            margin-left: 40px;
+            padding-top: 12px;
+        }
+
+        .bg {
+            border-bottom: 3px solid #00c3f5;
+            color: #00c3f5;
+            /* background: #cccccc; */
+        }
+
+        .home-shop-footer {
+            width: 1246px;
+            height: 686px;
+            padding-top: 4px;
+        }
+
+        .home-shop-footer ul {
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            /* float: left; */
+        }
+
+        .home-shop-footer ul li {
+            width: 244px;
+            height: 338px;
+            box-sizing: border-box;
+            margin: 0 5px 5px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .home-shop-footer li a img {
+            margin-top: 36px;
+            padding: 0 35px;
+        }
+
+        .home-shop-footer li h4 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .home-shop-footer li h6 span {
+            margin-top: 5px;
+            color: #aaa;
+        }
+
+        .home-shop-footer li p {
+            margin: 5px 0;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========banner广告开始========= -->
+    <div id="banner" class="fw">
+        <a href="https://hd.meizu.com/huodong/downloads.html?click=store_index_dt_1" title="App下载 ">
+            <img src="./img/banner.jpg" alt="广告" class="bannerImg">
+        </a>
+        <a href="#" title="关闭" id="clos">
+            <i class="iconfont icon-2guanbi"></i>
+        </a>
+    </div>
+    <!-- ========banner广告结束========= -->
+    <!-- ========header开始========= -->
+    <header id='nav' class="fw">
+        <div id="nav-left">
+            <a href="#" class="icon">
+                <img src="./img/logo.png" alt="">
+            </a>
+            <ul class="home-nav">
+                <li class="home-nav-li">
+                    <a href="">手机</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅族手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot1.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot2.jpg" alt="">
+                            <span>魅族s5</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot3.jpg" alt="">
+                            <span>魅族PRO6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot4.jpg" alt="">
+                            <span>魅族PRO7</span>
+                        </a>
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅蓝手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot5.jpg" alt="">
+                            <span>魅族S6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot6.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">智能设备</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>智能设备</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/zhi1.png" alt="">
+                            <span>魅族智能体脂秤</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/zhi2.png" alt="">
+                            <span>体脂秤</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/zhi3.png" alt="">
+                            <span>牙刷</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/zhi4.png" alt="">
+                            <span>魅族盒子</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/zhi5.png" alt="">
+                            <span>魅族电饭煲</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">智能穿戴</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>智能穿戴</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/c1.jpg" alt="">
+                            <span>手环</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/c2.png" alt="">
+                            <span>乐心手环</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/c3.png" alt="">
+                            <span>乐心运动手环</span>
+                        </a>
+            
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">游戏设备</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>游戏设备</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot1.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot2.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot3.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot4.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅蓝手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot5.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot6.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">数码影音</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅族手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot1.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot2.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot3.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot4.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅蓝手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot5.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot6.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">手机配件 / 移动电源</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅族手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot1.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot2.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot3.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot4.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅蓝手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot5.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot6.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">移动存储／办公设备</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅族手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot1.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot2.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot3.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot4.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅蓝手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot5.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot6.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="home-nav-li">
+                    <a href="">生活周边</a>
+                    <div class="home-nav-div">
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅族手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot1.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot2.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot3.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot4.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href=" " class="home-nav-div-title">
+                            <span>魅蓝手机</span>
+                            <i>></i>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot5.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                        <a href="" class='home-nav-div-items'>
+                            <img src="./img/hot6.jpg" alt="">
+                            <span>魅族s6</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul id="nav-center">
+            <li class="nav-center-li">
+                <a href="">魅族商城</a>
+            </li>
+            <li class="nav-center-li">
+                <a href="">魅族手机</a>
+                <div class="nav-center-children">
+                    <div class="nav-center-children-items">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot2.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot3.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot4.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-center-li">
+                <a href="">魅蓝手机</a>
+                <div class="nav-center-children">
+                    <div class="nav-center-children-items" style="margin-left:260px;">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot2.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot3.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot4.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <span>魅族S6</span>
+                                    <p>¥799</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-center-li">
+                <a href="">魅族声学</a>
+            </li>
+            <li class="nav-center-li">
+                <a href="">智能·配件</a>
+            </li>
+            <li class="nav-center-li">
+                <a href="">服务</a>
+            </li>
+            <li class="nav-center-li">
+                <a href="">专卖店</a>
+            </li>
+            <li class="nav-center-li">
+                <a href="">Flyme</a>
+            </li>
+            <li class="nav-center-li">
+                <a href="">社区</a>
+            </li>
+        </ul>
+        <!-- 导航右部分 -->
+        <ul id="nav-right">
+            <li class="nav-right-seach">
+                <input type="text" placeholder="魅蓝S6">
+                <i class="iconfont icon-sousuo"></i>
+            </li>
+            <li class="nav-right-login">
+                <a href=""></a>
+                <img src="./img/login.png" alt="">
+                <ul class="nav-right-login-item">
+                    <li>
+                        <a href="">立即注册</a>
+                    </li>
+                    <li>
+                        <a href="">立即登陆</a>
+                    </li>
+                    <li>
+                        <a href="">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="">M码通道</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-right-shop">
+                <a href=""></a>
+                <i class="iconfont icon-gouwuche"></i>
+                <div class="nav-right-shop-items">
+                    <img src="./img/xx.png" alt="">
+                    <div>
+                        登录后可显示
+                        <br> 您账号中已加入的商品哦~
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </header>
+    <!-- ========header结束 ========= -->
+    <!-- ========中间部分开始========= -->
+    <div class="home">
+        <!-- ========中间轮播图开始 -->
+        <div class="home-swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/1b878084-c8b4-47c1-a727-81a211fe8be4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/71bb12c1-7c60-41af-824e-1b1d3730bea5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/b87436fb-dcf2-4058-8bba-f12264f724b2.jpg" alt="">
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+        <!-- ========中间轮播图结束 -->
+        <!-- ========左侧导航开始===== -->
+        
+       
+        
+        <!-- ========左侧导航结束===== -->
+        <ul class="home-server fw" id='home-server'>
+            <li class="home-server-li1">
+                <a href="" class="home-server-a">
+                    <i class="iconfont icon-ma"></i>
+                    M码通道
+                </a>
+                <a href="" class="home-server-a">
+                    <i class="iconfont icon-xunhuan"></i>
+                    以旧换新
+                </a>
+                <a href="" class="home-server-a">
+                    <i class="iconfont icon-tuoguanshangjin-hui"></i>
+                    赚奖金
+                </a>
+                <a href="" class="home-server-a">
+                    <i class="iconfont icon-wendang"></i>
+                    回购单查询
+                </a>
+            </li>
+            <li class="home-server-img">
+                <a href="">
+                    <img src="./img/server1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/server2.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/server3.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/server4.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <!-- ========热品推荐开始===== -->
+        <div class="home-hot fw">
+            <div class="home-hot-header">
+                <div class="home-hot-header-left">
+                    热品推荐
+                </div>
+                <div class="home-hot-header-right">
+                    <div class="home-hot-header-left-btn">
+                        <i class="iconfont icon-arrow-right-copy-copy"></i>
+                    </div>
+                    <div class="home-hot-header-right-btn">
+                        <i class="iconfont icon-arrow-right-copy"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="home-hot-layout">
+                <ul class="home-hot-layout-ul">
+                    <li>
+                        <a href="">
+                            <img src="./img/hot1.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot2.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>最新机型</h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot3.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot4.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot5.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot6.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot7.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot8.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot9.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/hot10.jpg" alt="">
+                            <h4>魅蓝 S6</h4>
+                            <h6>
+                                <span>最新机型</span>
+                            </h6>
+                            <p>¥999</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ========热品推荐结束===== -->
+        <!-- ========商品展览开始===== -->
+        <div class="home-shop-ad fw">
+            <a href="">
+                <img src="./img/add.jpg" alt="">
+            </a>
+        </div>
+        <div class="home-shop">
+            <div class="home-shop-content">
+                <div class="home-shop-header fw">
+                    <div class="home-shop-header-left">
+                        <p>手机</p>
+                        <a href="#" class="home-shop-header-left-a bg">热销机型</a>
+                        <a href="#" class="home-shop-header-left-a">其他项目</a>
+                    </div>
+                    <div>
+                        <p>更多>>></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="home-shop-footer fw">
+                        <ul>
+                            <li>
+                                <img src="./img/content1.jpg" alt="">
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <h4>魅蓝 Note6</h4>
+                                    <h6>
+                                        <span>领券最高减100元</span>
+                                    </h6>
+                                    <p>¥899 起</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot2.jpg" alt="">
+                                    <h4>魅蓝 6</h4>
+                                    <h6>
+                                        <span>最高立减70元 享6期免息</span>
+                                    </h6>
+                                    <p>¥699 起</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot3.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot4.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>5.7 英寸全面屏，疾速游戏芯片</span>
+                                    </h6>
+                                    <p>¥999 起</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot5.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot4.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot5.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="home-shop-footer fw" style="display:none">
+                        <ul>
+                            <!-- <li>
+                            <img src="./img/content1.jpg" alt="">
+                        </li> -->
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <h4>魅蓝 Note6</h4>
+                                    <h6>
+                                        <span>领券最高减100元</span>
+                                    </h6>
+                                    <p>¥899 起</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot2.jpg" alt="">
+                                    <h4>魅蓝 6</h4>
+                                    <h6>
+                                        <span>最高立减70元 享6期免息</span>
+                                    </h6>
+                                    <p>¥699 起</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot3.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot4.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>5.7 英寸全面屏，疾速游戏芯片</span>
+                                    </h6>
+                                    <p>¥999 起</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot5.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot4.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot5.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/hot1.jpg" alt="">
+                                    <h4>魅蓝 S6</h4>
+                                    <h6>
+                                        <span>最新机型</span>
+                                    </h6>
+                                    <p>¥999</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========商品展览结束===== -->
+    </div>
+    <!-- ========中间部分结束========= -->
+    <!-- ========footer开始 ========= -->
+    <footer>
+        <div class="footer fw">
+            <section class="footer-top">
+                <ul class="footer-top-left">
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-tianmaoshunfengbaoyou"></i>
+                            </span>
+                            <span> 顺丰包邮</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-lightningshandian"></i>
+                            </span>
+                            <span>100+ 城市次日送达</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-fanhui1"></i>
+                            </span>
+                            <span>7 天无理由退货</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-shuaxin"></i>
+                            </span>
+                            <span>15 天换货保障</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-icon--"></i>
+                            </span>
+                            <span>1 年免费保修</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-dizhi"></i>
+                            </span>
+                            <span>2300+ 线下体验店</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-msnui-pc"></i>
+                            </span>
+                            <span>远程支持服务</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>
+                                <i class="iconfont icon-fangzi"></i>
+                            </span>
+                            <span>上门快修</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer-top-right">
+                    <p>24小时全国服务热线</p>
+                    <p class="tel">400-788-3333</p>
+                    <a href="">
+                        <i class="iconfont icon-xiazai16"></i>
+                        <span>在线客服</span>
+                    </a>
+                </div>
+            </section>
+            <hr>
+            <section class="footer-bottom">
+                <ul class="footer-bottom-top">
+                    <li>
+                        <a href="#" class="footer-bottom-top-a">了解魅族</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">加入我们</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">联系我们</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">Flyme</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">魅族社区</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">天猫旗舰店</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">问题反馈</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href="#">线上销售授权名单公示</a>
+                    </li>
+                </ul>
+                <div>
+                    <span>
+                        <a href="#">©2017 Meizu Telecom Equipment Co., Ltd. All rights reserved.</a>
+                        <a href="#">粤ICP备13003602号-2</a>
+                        <a href="#">合字B2-20170010</a>
+                        <a href="#">营业执照</a>
+                        <a href="#">法律声明</a>
+                        <a href="#">粤公网安备 44049102496009号</a>
+                    </span>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <!-- ========footer结束 ========= -->
+</body>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/swiper-4.1.6.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+
+
+</script>
+
+</html>
